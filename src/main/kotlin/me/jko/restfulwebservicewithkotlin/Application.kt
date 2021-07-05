@@ -16,5 +16,3 @@ fun main(args: Array<String>) {
     runApplication<Application>(*args)
 }
 
-@Table("MESSAGES")
-data class Message(@Id val id: String?, val text: String)
