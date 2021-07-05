@@ -16,16 +16,5 @@ fun main(args: Array<String>) {
     runApplication<Application>(*args)
 }
 
-@RestController
-class MessageResource(val service: MessageService) {
-    @GetMapping
-    fun index(): List<Message> = service.findMessages()
-
-    @PostMapping
-    fun post(@RequestBody message: Message) {
-        service.post(message)
-    }
-}
-
 @Table("MESSAGES")
 data class Message(@Id val id: String?, val text: String)
